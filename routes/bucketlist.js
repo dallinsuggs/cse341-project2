@@ -19,7 +19,7 @@ routes.get('/', (req, res) => {
 //GET 1 ITEM
 routes.get('/:id', (req, res) => {
   const itemId = new ObjectId(req.params.id);
-  const results = connect.getCollection.find({ _id: itemId });
+  const results = connect.getCollection().find({ _id: itemId });
   results.toArray().then((documents) => {
     res.status(200).json(documents[0]);
     console.log(`Returned bucketlist item ${req.params.id}`);

@@ -1,6 +1,6 @@
 GET http://localhost:3000/bucketlist
 ###
-GET http://localhost:3000/bucketlist/id
+GET http://localhost:3000/bucketlist/628653719d28ed899b9b04ec
 
 
 ###
