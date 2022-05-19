@@ -3,4 +3,30 @@ GET http://localhost:3000/bucketlist
 GET http://localhost:3000/bucketlist/628653719d28ed899b9b04ec
 
 
+### CREATE
+POST http://localhost:3000/bucketlist
+content-type: application/json
+
+{
+  "name":"Write a novel",
+  "deadline":"2031",
+  "priority":"1"
+}
+
+###HEROKU__________________________________________
+
+GET https://cse341-project2-suggs.herokuapp.com/bucketlist
+###
+GET https://cse341-project2-suggs.herokuapp.com/bucketlist/628653719d28ed899b9b04ec
+
+### CREATE
+POST https://cse341-project2-suggs.herokuapp.com/bucketlist
+content-type: application/json
+
+{
+  "name":"Write a novel",
+  "deadline":"2031",
+  "priority":"1"
+}
+
 ###

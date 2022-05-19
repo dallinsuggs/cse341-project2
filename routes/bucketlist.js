@@ -27,7 +27,21 @@ routes.get('/:id', (req, res) => {
 });
 
 //POST 1 NEW BUCKETLIST ITEM
-//add code here
+routes.post('/', (req, res) => {
+  console.log(req.body);
+
+  const newDoc = new Object({
+    name: req.body.name,
+    deadline: req.body.deadline,
+    priority: req.body.priority
+  });
+  const result = connect.getCollection().insertOne(newDoc)
+    .then(result => {
+      res.json(`New listing created with the following id: ${result.insertedId}`);
+    })
+    .catch(error => console.error(error));
+  console.log(`New listing created with the following id: ${result.insertedId}`);
+});
 
 
 module.exports = routes;
