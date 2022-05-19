@@ -5,7 +5,7 @@
     "description": "Bucket List API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-project2-suggs.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https",
