@@ -48,7 +48,11 @@ routes.get('/:id', (req, res) => {
 
 //POST 1 NEW BUCKETLIST ITEM
 routes.post('/', (req, res) => {
-  try{
+  try {
+    if (!req.body.name || !req.body.deadline || !req.body.priority) {
+      res.status(400).send({ message: 'Content cannot be empty!' });
+      return;
+    }
     const newDoc = new Object({
       name: req.body.name,
       deadline: req.body.deadline,

@@ -111,7 +111,8 @@
                   "example": "any"
                 }
               }
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
