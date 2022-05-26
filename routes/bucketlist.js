@@ -107,6 +107,22 @@ routes.post('/', (req, res) => {
 //PUT UPDATE TO CONTACT
 routes.put('/:id', (req, res) => {
   try {
+    if (!req.body.name || !req.body.deadline || !req.body.priority) {
+      res.status(400).send({ message: 'Content cannot be empty!' });
+      return;
+    }
+    if (typeof itemName != 'string' || itemName.length < 3) {
+      res.status(400).send({ message: 'Bucketlist item name must be a string at least 3 characters long!' });
+      return;
+    }
+    if (isNaN(itemDeadline) || itemDeadline.length != 4) {
+      res.status(400).send({ message: 'Item deadline must be a valid 4-digit number (year).' });
+      return;
+    }
+    if (isNaN(itemPriority) || itemPriority < 0) {
+      res.status(400).send({ message: 'Item priority has to be a number greater than or equal to 0.' });
+      return;
+    }
     const itemId = new ObjectId(req.params.id);
     const newDoc = new Object(req.body);
     connect.getCollection().replaceOne({ _id: itemId }, newDoc)
