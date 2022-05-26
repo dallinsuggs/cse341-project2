@@ -105,9 +105,7 @@
                   "example": "any"
                 }
               }
-            },
-            "required": true,
-            "type": "string"
+            }
           }
         ],
         "responses": {
