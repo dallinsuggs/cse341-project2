@@ -3,6 +3,7 @@ const connect = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const bodyParser = require('body-parser');
 const express = require('express');
+const itemCheck = require('../util/itemCheck.js');
 
 routes.use(bodyParser.urlencoded({ extended: true }));
 routes.use(express.json());
@@ -51,8 +52,9 @@ routes.post('/', (req, res) => {
   try {
     if (!req.body.name || !req.body.deadline || !req.body.priority) {
       res.status(400).send({ message: 'Content cannot be empty!' });
-      return;
+      return;//__________________________________________________________________________________________________________________
     }
+    itemCheck(req.body.name, req.body.deadline, req.body.priority);
     const newDoc = new Object({
       name: req.body.name,
       deadline: req.body.deadline,
