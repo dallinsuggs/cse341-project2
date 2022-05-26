@@ -1,6 +1,6 @@
 GET http://localhost:3000/bucketlist
 ###
-GET http://localhost:3000/bucketlist/628653719d28ed899b9b04ec
+GET http://localhost:3000/bucketlist/628f76805a1d82fe2575455f
 
 
 ### CREATE
@@ -8,10 +8,28 @@ POST http://localhost:3000/bucketlist
 content-type: application/json
 
 {
-  "name":"Write a novel",
+  "name":"Get wrecked",
   "deadline":"2031",
   "priority":"1"
 }
+
+###UPDATE
+PUT http://localhost:3000/bucketlist/628f76805a1d82fe2575455f
+content-type: application/json
+
+{
+  "name":"Get Wrekt",
+  "deadline":"2024",
+  "priority":"1"
+}
+
+###DELETE
+DELETE http://localhost:3000/bucketlist/62881419657e874e70f0f0ff
+
+
+
+
+
 
 ###HEROKU__________________________________________
 
@@ -29,4 +47,15 @@ content-type: application/json
   "priority":"1"
 }
 
-###
+###UPDATE
+PUT http://cse341-project2-suggs.herokuapp.com/bucketlist/628653719d28ed899b9b04ec
+content-type: application/json
+
+{
+  "name":"Get Wrekt",
+  "deadline":"2024",
+  "priority":"1"
+}
+
+###DELETE
+DELETE http://cse341-project2-suggs.herokuapp.com/bucketlist/628653719d28ed899b9b04ec
