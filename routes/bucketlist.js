@@ -130,4 +130,5 @@ routes.delete('/:id', (req, res) => {
   }
 });
 
+module.exports = itemCheckFunction;
 module.exports = routes;
