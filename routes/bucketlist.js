@@ -54,19 +54,7 @@ routes.post('/', (req, res) => {
       res.status(400).send({ message: 'Content cannot be empty!' });
       return;//__________________________________________________________________________________________________________________
     }
-    if (typeof req.body.name != 'string' || req.body.name.length < 3) {
-      res.status(400).send({ message: 'Bucketlist item name must be a string at least 3 characters long!' });
-      return;
-    }
-    if (isNaN(req.body.deadline) || req.body.deadline.length != 4) {
-      res.status(400).send({ message: 'Item deadline must be a valid 4-digit number (year).' });
-      return;
-    }
-    if (isNaN(req.body.priority) || req.body.priority < 0) {
-      res.status(400).send({ message: 'Item priority has to be a number greater than or equal to 0.' });
-      return;
-    }//_________________________________________________________________________________________________________________________
-    
+    itemCheck.itemCheck(req.body.name, req.body.deadline, req.body.priority);
     const newDoc = new Object({
       name: req.body.name,
       deadline: req.body.deadline,
