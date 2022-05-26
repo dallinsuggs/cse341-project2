@@ -54,7 +54,7 @@ routes.post('/', (req, res) => {
       res.status(400).send({ message: 'Content cannot be empty!' });
       return;//__________________________________________________________________________________________________________________
     }
-    itemCheck.itemCheck(req.body.name, req.body.deadline, req.body.priority);
+    itemCheck.itemCheckFunction(req.body.name, req.body.deadline, req.body.priority);
     const newDoc = new Object({
       name: req.body.name,
       deadline: req.body.deadline,

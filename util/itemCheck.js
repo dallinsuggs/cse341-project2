@@ -1,6 +1,6 @@
 const res = require("express/lib/response")
 
-module.exports.itemCheck = (itemName, itemDeadline, itemPriority) => {
+const itemCheckFunction = (itemName, itemDeadline, itemPriority) => {
   if (typeof itemName != 'string' || itemName.length < 3) {
     res.status(400).send({ message: 'Bucketlist item name must be a string at least 3 characters long!' });
     return;
@@ -13,4 +13,6 @@ module.exports.itemCheck = (itemName, itemDeadline, itemPriority) => {
     res.status(400).send({ message: 'Item priority has to be a number greater than or equal to 0.' });
     return;
   }
-}
+};
+
+module.exports.itemCheckFunction = itemCheckFunction;
