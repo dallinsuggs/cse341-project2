@@ -4,8 +4,8 @@
   "description": "Project 2 for CSE341",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app",
     "swagger": "node ./swagger.js"
   },
   "repository": {
@@ -20,13 +20,22 @@
   "homepage": "https://github.com/willhawkes/cse341-project2#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
     "mongodb": "^4.5.0",
+    "mongoose": "^6.3.5",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.15",
     "swagger-autogen": "^2.21.1"
   }

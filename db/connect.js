@@ -1,18 +1,19 @@
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
 dotenv.config();
 
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
 
 let _client;
 let _collection;
 
 const initDatabase = () => {
-  MongoClient.connect(process.env.DB_URI, (err, client) => {
+  mongoose.connect(process.env.DB_URI, (err, client) => {
     if (err) throw err;
     _client= client;
-    _collection = client.db('bucketlist_db').collection('bucketlist');
-    console.log('DB Connected Successfully');
+    _collection = client.db.collection('bucketlist');
+    console.log(`DB Connected Successfully`);
   });
 };
 
