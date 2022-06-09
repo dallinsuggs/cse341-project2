@@ -10,6 +10,7 @@ const {ensureAuth, ensureAuth2, ensureGuest } = require('../middleware/auth');
 
 //GET ALL BUCKETLIST ITEMS
 routes.get('/', ensureAuth2, (req, res) => {
+  res.send('Req.isAuthenticated: ' + req.isAuthenticated());
   try {
     const results = connect.getCollection().find({});
     results.toArray()
