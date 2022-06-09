@@ -13,9 +13,10 @@ routes.get('/', ensureGuest, (req, res) => {
 // @desc Api-docs
 // @route GET /api-docs
 routes.get('/api-docs', ensureAuth, async (req, res) => {
-  res.render('api-docs', {
-    name: req.user.firstName
-  })
+  res.render('Req.isAuthenticated: ' + req.isAuthenticated());
+  // res.render('api-docs', {
+  //   name: req.user.firstName
+  // })
 })
 
 routes.use('/auth', require('./auth'));
