@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "<p>Bucketlist API Documentation</p><br><a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a>",
+    "description": "<p>Bucketlist API Documentation</p><a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Log Out</a><a href='https://cse341-project2-suggs.herokuapp.com/'>Login Page</a>",
     "version": "1.0.0"
   },
   "host": "cse341-project2-suggs.herokuapp.com",
@@ -31,6 +31,7 @@
     },
     "/bucketlist/": {
       "get": {
+        "summary": "Get all",
         "description": "Get all Bucketlist items from the database",
         "parameters": [],
         "responses": {
@@ -40,6 +41,7 @@
         }
       },
       "post": {
+        "summary": "Post 1",
         "description": "Post a new entry (bucketlist item) to the database",
         "parameters": [
           {
@@ -82,6 +84,7 @@
     },
     "/bucketlist/{id}": {
       "get": {
+        "summary": "Get 1",
         "description": "Get 1 bucketlist item by ID",
         "parameters": [
           {
@@ -98,6 +101,7 @@
         }
       },
       "put": {
+        "summary": "Put 1",
         "description": "Put an update to change an existing bucketlist item (reference with ID)",
         "parameters": [
           {
@@ -145,6 +149,7 @@
         }
       },
       "delete": {
+        "summary": "Delete 1",
         "description": "Delete a bucketlist item from the database by ID",
         "parameters": [
           {
