@@ -8,9 +8,8 @@ module.exports = {
     }
   },
   ensureAuth2: function (req, res, next) {
-    console.log('req.isauth: ' + req.isAuthenticated())
+    console.log('inside ensureauth2');
     if (req.isAuthenticated()) {
-      console.log('You are connected');
       return next();
     } else {
       res.send('<p>You need to be logged in<p>')
