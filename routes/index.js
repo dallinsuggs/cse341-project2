@@ -13,7 +13,13 @@ routes.get('/', ensureGuest, (req, res) => {
 // @desc Api-docs
 // @route GET /api-docs
 routes.get('/api-docs', ensureAuth, async (req, res) => {
-  res.render('api-docs')
+  if (!req.isAuthenticated) {
+    res.render('login', {
+      layout: 'login',
+    })
+  } else {
+    res.render('api-docs')
+  }
 })
 
 routes.use('/auth', require('./auth'));
