@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "<a href='http://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a><p>Welcome, <script>document.write(name)</script></p>",
+    "description": "<a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a><p>Welcome, <script>document.write(name)</script></p>",
     "version": "1.0.0"
   },
   "host": "cse341-project2-suggs.herokuapp.com",
@@ -11,29 +11,6 @@
     "https",
     "http"
   ],
-  "components": {
-    "securitySchemes": {
-      "oAuth": {
-        "type": "oauth2",
-        "description": "This API uses OAuth 2 with the implicit grant flow",
-        "flows": {
-          "implicit": {
-            "authorizationUrl": "https://cse341-project2-suggs.herokuapp.com/views/login",
-            "scopes": {
-              "read_items": "read items",
-              "write_items": "write items"
-            }
-          }
-        }
-      }
-    }
-  },
-  "security": {
-    "oAuth": [
-      "read_items",
-      "write_items"
-    ]
-  },
   "paths": {
     "/api-docs": {
       "get": {
