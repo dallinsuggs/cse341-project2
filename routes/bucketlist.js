@@ -6,11 +6,10 @@ const express = require('express');
 
 routes.use(bodyParser.urlencoded({ extended: true }));
 routes.use(express.json());
-const {ensureAuth, ensureAuth2, ensureGuest } = require('../middleware/auth');
+const {ensureAuth, ensureGuest } = require('../middleware/auth');
 
 //GET ALL BUCKETLIST ITEMS
-routes.get('/', ensureAuth2, (req, res) => {
-  res.send('Req.isAuthenticated: ' + req.isAuthenticated());
+routes.get('/', ensureAuth, (req, res) => {
   try {
     const results = connect.getCollection().find({});
     results.toArray()

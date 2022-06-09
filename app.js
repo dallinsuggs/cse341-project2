@@ -43,7 +43,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 //static folder
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '/public')))
 
 const port = process.env.PORT || 3000;
 

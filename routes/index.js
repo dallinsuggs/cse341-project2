@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 const express = require('express');
-const {ensureAuth, ensureGuest } = require('../middleware/auth');
+const { ensureAuth, ensureGuest } = require('../middleware/auth');
 
 // @desc Login/Landing page
 // @route GET /
