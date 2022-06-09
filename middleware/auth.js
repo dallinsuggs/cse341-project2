@@ -8,7 +8,7 @@ module.exports = {
     }
   },
   ensureAuth2: function (req, res, next) {
-    console.log('inside ensureauth2');
+    res.send('Req.isAuthenticated: ' + req.isAuthenticated())
     if (req.isAuthenticated()) {
       return next();
     } else {
