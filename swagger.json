@@ -31,7 +31,7 @@
     },
     "/bucketlist/": {
       "get": {
-        "description": "",
+        "description": "Get all Bucketlist items from the database",
         "parameters": [],
         "responses": {
           "200": {
@@ -40,7 +40,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Post a new entry (bucketlist item) to the database",
         "parameters": [
           {
             "name": "body",
@@ -82,7 +82,7 @@
     },
     "/bucketlist/{id}": {
       "get": {
-        "description": "",
+        "description": "Get 1 bucketlist item by ID",
         "parameters": [
           {
             "name": "id",
@@ -98,7 +98,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Put an update to change an existing bucketlist item (reference with ID)",
         "parameters": [
           {
             "name": "id",
@@ -145,7 +145,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a bucketlist item from the database by ID",
         "parameters": [
           {
             "name": "id",
