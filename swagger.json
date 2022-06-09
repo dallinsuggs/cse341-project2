@@ -5,6 +5,18 @@
     "description": "<a href='http://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a>",
     "version": "1.0.0"
   },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "oauth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://api.example.com/api/auth/",
+      "flow": "implicit"
+    }
+  },
   "host": "cse341-project2-suggs.herokuapp.com",
   "basePath": "/",
   "schemes": [
