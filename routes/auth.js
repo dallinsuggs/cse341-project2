@@ -9,8 +9,8 @@ routes.get('/google', passport.authenticate('google', { scope: ['profile'] }))
 // @desc Google auth callback
 // @route GET /auth/google/callback
 routes.get('/google/callback', passport.authenticate('google', { failureRedirect: '/'}), (req, res) => {
+  res.redirect('/api-docs');
   res.send('Req.isAuthenticated: ' + req.isAuthenticated());
-  // res.redirect('/api-docs');
 })
 
 // @desc Logout user
