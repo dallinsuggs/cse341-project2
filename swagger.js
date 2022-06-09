@@ -3,10 +3,10 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'My API',
-    description: 'Bucket List API',
+    description: "<a href='http://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a>",
   },
-  host: 'localhost:3000',
-  schemes: ['https'],
+  host: 'cse341-project2-suggs.herokuapp.com',
+  schemes: ['https', 'http'],
 };
 
 const outputFile = './swagger.json';

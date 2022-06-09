@@ -49,7 +49,7 @@ routes.get('/:id', (req, res) => {
 //POST 1 NEW BUCKETLIST ITEM
 routes.post('/', (req, res) => {
   try {
-    if (!req.body.name || !req.body.deadline || !req.body.priority) {
+    if (!req.body.name || !req.body.deadline || !req.body.priority || !req.body.description || !req.body.plan || !req.body.links || !req.body.notes) {
       res.status(400).send({ message: 'Content cannot be empty!' });
       return;
     }
@@ -65,10 +65,22 @@ routes.post('/', (req, res) => {
       res.status(400).send({ message: 'Item priority has to be a number greater than or equal to 0.' });
       return;
     }
+    if (typeof req.body.description != 'string' || req.body.description.length < 5) {
+      res.status(400).send({ message: 'Bucketlist item description must be a string at least 5 characters long!' });
+      return;
+    }
+    if (typeof req.body.plan != 'string' || req.body.name.plan < 5) {
+      res.status(400).send({ message: 'Bucketlist item description must be a string at least 5 characters long!' });
+      return;
+    }
     const newDoc = new Object({
       name: req.body.name,
       deadline: req.body.deadline,
-      priority: req.body.priority
+      priority: req.body.priority,
+      description: req.body.description,
+      plan: req.body.plan,
+      links: req.body.links,
+      notes: req.body.notes
     });
     const result = connect.getCollection().insertOne(newDoc)
       .then(result => {
@@ -101,6 +113,14 @@ routes.put('/:id', (req, res) => {
     }
     if (isNaN(req.body.priority) || req.body.priority < 0) {
       res.status(400).send({ message: 'Item priority has to be a number greater than or equal to 0.' });
+      return;
+    }
+    if (typeof req.body.description != 'string' || req.body.description.length < 5) {
+      res.status(400).send({ message: 'Bucketlist item description must be a string at least 5 characters long!' });
+      return;
+    }
+    if (typeof req.body.plan != 'string' || req.body.name.plan < 5) {
+      res.status(400).send({ message: 'Bucketlist item description must be a string at least 5 characters long!' });
       return;
     }
     const itemId = new ObjectId(req.params.id);

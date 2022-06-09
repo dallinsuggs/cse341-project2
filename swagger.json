@@ -5,18 +5,6 @@
     "description": "<a href='http://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a>",
     "version": "1.0.0"
   },
-  "securityDefinitions": {
-    "api_key": {
-      "type": "apiKey",
-      "name": "api_key",
-      "in": "header"
-    },
-    "oauth": {
-      "type": "oauth2",
-      "authorizationUrl": "http://api.example.com/api/auth/",
-      "flow": "implicit"
-    }
-  },
   "host": "cse341-project2-suggs.herokuapp.com",
   "basePath": "/",
   "schemes": [
@@ -62,13 +50,25 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "item name"
                 },
                 "deadline": {
-                  "example": "any"
+                  "example": "2999"
                 },
                 "priority": {
-                  "example": "any"
+                  "example": "99"
+                },
+                "description": {
+                  "example": "a description of the goal"
+                },
+                "plan": {
+                  "example": "a plan to obtain the goal"
+                },
+                "links": {
+                  "example": "reference links (if any)"
+                },
+                "notes": {
+                  "example": "comments or notes (if any)"
                 }
               }
             }
@@ -114,13 +114,25 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "item name"
                 },
                 "deadline": {
-                  "example": "any"
+                  "example": "2999"
                 },
                 "priority": {
-                  "example": "any"
+                  "example": "99"
+                },
+                "description": {
+                  "example": "a description of the goal"
+                },
+                "plan": {
+                  "example": "a plan to obtain the goal"
+                },
+                "links": {
+                  "example": "reference links (if any)"
+                },
+                "notes": {
+                  "example": "comments or notes (if any)"
                 }
               }
             },

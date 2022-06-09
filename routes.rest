@@ -10,7 +10,11 @@ content-type: application/json
 {
   "name":"Get wrecked",
   "deadline":"2031",
-  "priority":"1"
+  "priority":"1",
+  "description":"I want to get destroyed",
+  "plan":"Pit myself against the strongest",
+  "links":"wikipedia.com/wreckage",
+  "notes":"It'll be a learning experience"
 }
 
 ###UPDATE
@@ -20,7 +24,11 @@ content-type: application/json
 {
   "name":"Get Wrekt",
   "deadline":"2024",
-  "priority":"1"
+  "priority":"1",
+  "description":"I want to get destroyed",
+  "plan":"Pit myself against the strongest",
+  "links":"wikipedia.com/wreckage",
+  "notes":"It'll be a learning experience"
 }
 
 ###DELETE
@@ -42,9 +50,13 @@ POST https://cse341-project2-suggs.herokuapp.com/bucketlist
 content-type: application/json
 
 {
-  "name":"Write a novel",
+  "name":"Get wrecked",
   "deadline":"2031",
-  "priority":"1"
+  "priority":"1",
+  "description":"I want to get destroyed",
+  "plan":"Pit myself against the strongest",
+  "links":"wikipedia.com/wreckage",
+  "notes":"It'll be a learning experience"
 }
 
 ###UPDATE
@@ -54,7 +66,11 @@ content-type: application/json
 {
   "name":"Get Wrekt",
   "deadline":"2024",
-  "priority":"1"
+  "priority":"1",
+  "description":"I want to get destroyed",
+  "plan":"Pit myself against the strongest",
+  "links":"wikipedia.com/wreckage",
+  "notes":"It'll be a learning experience"
 }
 
 ###DELETE
