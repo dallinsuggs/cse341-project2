@@ -9,7 +9,7 @@ module.exports = {
   },
   ensureAuth2: function (req, res, next) {
     if (req.isAuthenticated()) {
-      return next();
+      exit;
     } else {
       res.send('<p>You need to be logged in<p>')
       exit;
