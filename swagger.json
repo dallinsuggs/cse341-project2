@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "<p>Bucketlist API Documentation</p><a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Log Out</a><a href='https://cse341-project2-suggs.herokuapp.com/'>Login Page</a>",
+    "description": "<p>Bucketlist API Documentation</p><a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Log Out</a><br><a href='https://cse341-project2-suggs.herokuapp.com/'>Login Page</a>",
     "version": "1.0.0"
   },
   "host": "cse341-project2-suggs.herokuapp.com",
@@ -11,24 +11,6 @@
     "https"
   ],
   "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/bucketlist/": {
       "get": {
         "summary": "Get all",
