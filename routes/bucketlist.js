@@ -99,7 +99,7 @@ routes.post('/', (req, res) => {
 //PUT UPDATE TO CONTACT
 routes.put('/:id', (req, res) => {
   try {
-    if (!req.body.name || !req.body.deadline || !req.body.priority) {
+    if (!req.body.name || !req.body.deadline || !req.body.priority || !req.body.description || !req.body.plan || !req.body.links || !req.body.notes) {
       res.status(400).send({ message: 'Content cannot be empty!' });
       return;
     }

@@ -53,10 +53,10 @@
                   "example": "item name"
                 },
                 "deadline": {
-                  "example": "2999"
+                  "example": "\"2999\""
                 },
                 "priority": {
-                  "example": "99"
+                  "example": "\"99\""
                 },
                 "description": {
                   "example": "a description of the goal"
@@ -117,10 +117,10 @@
                   "example": "item name"
                 },
                 "deadline": {
-                  "example": "2999"
+                  "example": "\"2999\""
                 },
                 "priority": {
-                  "example": "99"
+                  "example": "\"99\""
                 },
                 "description": {
                   "example": "a description of the goal"
