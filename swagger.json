@@ -18,21 +18,15 @@
         "description": "This API uses OAuth 2 with the implicit grant flow",
         "flows": {
           "implicit": {
-            "authorizationUrl": "http://cse341-project2-suggs.herokuapp.com/auth/",
-            "scopes": {
-              "read_items": "read your items",
-              "write_items": "modify items"
-            }
+            "authorizationUrl": "http://cse341-project2-suggs.herokuapp.com/routes/auth/",
+            "scopes": {}
           }
         }
       }
     }
   },
   "security": {
-    "oAuth": [
-      "write_items",
-      "read_items"
-    ]
+    "oAuth": []
   },
   "paths": {
     "/api-docs": {
