@@ -10,6 +10,17 @@ routes.get('/', ensureGuest, (req, res) => {
   })
 })
 
+router.get('/dashboard', ensureAuth, async (req, res) => {
+  try {
+    res.render('dashboard', {
+      name: req.user.firstName,
+    })
+  } catch (err) {
+    console.error(err)
+    res.render('error/500')
+  }
+})
+
 // @desc Api-docs
 // @route GET /api-docs
 routes.get('/api-docs', ensureAuth, async (req, res) => {
