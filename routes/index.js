@@ -10,7 +10,7 @@ routes.get('/', ensureGuest, (req, res) => {
   })
 })
 
-router.get('/dashboard', ensureAuth, async (req, res) => {
+routes.get('/dashboard', ensureAuth, async (req, res) => {
   try {
     res.render('dashboard', {
       name: req.user.firstName,
