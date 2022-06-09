@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const exphbs = require('express-handlebars')
 const passport = require('passport')
 const session = require('express-session')
-// const MongoStore = require('connect-mongo')
+const MongoStore = require('connect-mongo')
 
 
 //module to connect to DB
@@ -33,9 +33,9 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false,
-  // store: MongoStore.create({
-  //   mongoUrl: process.env.DB_URI
-  // })
+  store: MongoStore.create({
+    mongoUrl: process.env.DB_URI
+  })
 }))
 
 //Passport middleware
