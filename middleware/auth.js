@@ -3,7 +3,9 @@ module.exports = {
     if (req.isAuthenticated()) {
       return next();
     } else {
-      res.redirect('/');
+      res.render('login', {
+        layout: 'login',
+      })
       exit;
     }
   },
