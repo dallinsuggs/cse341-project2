@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "<p>Bucketlist API Documentation</p><br><br><a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a>",
+    "description": "<p>Bucketlist API Documentation</p><br><a href='https://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a>",
     "version": "1.0.0"
   },
   "host": "cse341-project2-suggs.herokuapp.com",
