@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "<a href='http://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a><p>Welcome, {{name}}</p>",
+    "description": "<a href='http://cse341-project2-suggs.herokuapp.com/auth/logout'>Logout</a><p>Welcome, <script>document.write(name)</script></p>",
     "version": "1.0.0"
   },
   "host": "cse341-project2-suggs.herokuapp.com",
