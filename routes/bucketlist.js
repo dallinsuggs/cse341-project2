@@ -6,10 +6,10 @@ const express = require('express');
 
 routes.use(bodyParser.urlencoded({ extended: true }));
 routes.use(express.json());
-const {ensureAuth, ensureGuest } = require('../middleware/auth');
+const {ensureAuth, ensureAuth2, ensureGuest } = require('../middleware/auth');
 
 //GET ALL BUCKETLIST ITEMS
-routes.get('/', ensureAuth, (req, res) => {
+routes.get('/', ensureAuth2, (req, res) => {
   try {
     const results = connect.getCollection().find({});
     results.toArray()
@@ -28,7 +28,7 @@ routes.get('/', ensureAuth, (req, res) => {
 });
 
 //GET 1 ITEM
-routes.get('/:id', ensureAuth, (req, res) => {
+routes.get('/:id', ensureAuth2, (req, res) => {
   try {
     const itemId = new ObjectId(req.params.id);
     const results = connect.getCollection().find({ _id: itemId });
@@ -48,7 +48,7 @@ routes.get('/:id', ensureAuth, (req, res) => {
 });
 
 //POST 1 NEW BUCKETLIST ITEM
-routes.post('/', ensureAuth, (req, res) => {
+routes.post('/', ensureAuth2, (req, res) => {
   try {
     if (!req.body.name || !req.body.deadline || !req.body.priority || !req.body.description || !req.body.plan || !req.body.links || !req.body.notes) {
       res.status(400).send({ message: 'Content cannot be empty!' });
@@ -98,7 +98,7 @@ routes.post('/', ensureAuth, (req, res) => {
 });
 
 //PUT UPDATE TO CONTACT
-routes.put('/:id', ensureAuth, (req, res) => {
+routes.put('/:id', ensureAuth2, (req, res) => {
   try {
     if (!req.body.name || !req.body.deadline || !req.body.priority || !req.body.description || !req.body.plan || !req.body.links || !req.body.notes) {
       res.status(400).send({ message: 'Content cannot be empty!' });
@@ -141,7 +141,7 @@ routes.put('/:id', ensureAuth, (req, res) => {
 });
 
 //DELETE CONTACT
-routes.delete('/:id', ensureAuth, (req, res) => {
+routes.delete('/:id', ensureAuth2, (req, res) => {
   try {
     const itemId = new ObjectId(req.params.id);
     connect.getCollection().deleteOne({ _id: itemId })
